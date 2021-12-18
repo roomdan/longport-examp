@@ -18,7 +18,7 @@ export default function TeamCard({ obj, id }) {
     dispatch(
       paramsStatistics_action({ ...paramsStatisitics_REDUCER, team: id })
     );
-  }, []);
+  }, [dispatch, id, paramsStatisitics_REDUCER]);
 
   const viewStatistics = () => {
     dispatch(

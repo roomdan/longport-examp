@@ -8,18 +8,7 @@ import { useDispatch } from "react-redux";
 import { register_action } from "../../redux/action/register.reducer";
 
 const LoginPage = ({ render }) => {
-  const [renderPage, setRenderPage] = useState(true);
-
-  const sesionToken = JSON.parse(localStorage.getItem("accesToken"));
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (sesionToken) {
-      setRenderPage(false);
-    } else {
-      setRenderPage(true);
-    }
-  }, [sesionToken]);
 
   const [efect, setEfect] = useState({
     transform: "scale(.6)",

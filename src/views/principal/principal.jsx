@@ -12,7 +12,7 @@ import AddBoxIcon from "@mui/icons-material/AddBox";
 import Skeleton from "@mui/material/Skeleton";
 import { Navigate } from "react-router-dom";
 import { register_action } from "../../redux/action/register.reducer";
-import Content_Controller from "./content-ui-controller/content.ui.controller";
+import ContentController from "./content-ui-controller/content.ui.controller";
 
 const PrincipalPage = () => {
   const [vLeft, setVleft] = useState("-100%");
@@ -37,7 +37,7 @@ const PrincipalPage = () => {
 
   useEffect(() => {
     dispatch(getData_action());
-  }, []);
+  }, [dispatch]);
 
   const viewLeft = () => {
     if (vLeft === "-100%") {
@@ -109,7 +109,7 @@ const PrincipalPage = () => {
           </div>
         </div>
         <div className="page-central">
-          <Content_Controller />
+          <ContentController />
         </div>
       </div>
       <div className="controll-view-btn">

@@ -6,7 +6,7 @@ import SeasonsList from "./sub-views/seasons/seasons";
 import Statistics from "./sub-views/statistics/statistics";
 import TeamsSection from "./sub-views/teams/teams";
 
-const Content_Controller = () => {
+const ContentController = () => {
   const { ControlleView_REDUCER } = useSelector((e) => e);
 
   const data = (active) => {
@@ -25,4 +25,4 @@ const Content_Controller = () => {
   return <>{data(ControlleView_REDUCER)}</>;
 };
 
-export default Content_Controller;
+export default ContentController;

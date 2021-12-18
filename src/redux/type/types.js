@@ -1,4 +1,4 @@
-export default {
+const types = {
   user: "[GET] ALL_USERS_DATA",
   countries: "[GET] FOOTBALL-COUNTRIES",
   activeView: "[SET] ACTIVE_VIEW",
@@ -8,3 +8,5 @@ export default {
   statics: "[GET] STATISTICS_TEAM",
   paramsStatistics: "[SET] PARAMS_STATISTICS",
 };
+
+export default types;
