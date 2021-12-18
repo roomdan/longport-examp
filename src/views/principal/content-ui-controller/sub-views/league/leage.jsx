@@ -17,7 +17,7 @@ const Leages = () => {
 
   useEffect(() => {
     dispatch(getLeages_action(""));
-  }, [dispatch, getLeages_action]);
+  }, [dispatch]);
 
   const data = getLeages_REDUCER ? (
     getLeages_REDUCER.response
