@@ -1,0 +1,52 @@
+@import "../../scss/functions/continers.scss";
+
+@mixin welcome_estructure {
+  .presentation {
+    cursor: pointer;
+    button {
+      cursor: pointer;
+      outline: none;
+      border: none;
+      padding: 0.8rem;
+      font-size: 8rem;
+      transition: all 0.2s linear;
+      font-weight: 800;
+      color: transparent;
+      background: url("https://media2.giphy.com/media/3og0IV7MOCfnm85iRa/giphy.gif?cid=ecf05e474cj8co40nwvpwmrot5mmpd729rhe08xda6nqirpn&rid=giphy.gif&ct=g")
+        repeat;
+      background-position: 40% 50%;
+      -webkit-background-clip: text;
+      text-align: center;
+      letter-spacing: 2px;
+      animation: rotates 2s linear;
+      &:hover {
+        font-size: 4.5rem;
+        transition: all 0.2s linear;
+      }
+
+      @media screen and(max-width:920px) {
+        font-size: 5rem;
+      }
+    }
+  }
+}
+
+@keyframes rotates {
+  0% {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+
+  50% {
+    transform: rotate3d(5, 80, 90, -360deg);
+  }
+  100% {
+    transform: rotate3d(5, 80, 90, -360deg);
+  }
+}
+
+.welcome {
+  width: 100%;
+  min-height: 100vh;
+  @include center-all();
+  @include welcome_estructure();
+}

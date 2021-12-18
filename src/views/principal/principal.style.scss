@@ -1,0 +1,179 @@
+$itemHeader: calc(100% / 3);
+$transition: all 0.2s linear;
+
+.a-page {
+  width: 100%;
+  min-height: 100vh;
+
+  .controll-view-btn {
+    display: none;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    transition: $transition;
+    .action-btn {
+      background-color: transparent;
+      background-color: #8c00ff;
+      color: white;
+    }
+    @media screen and(max-width: 920px) {
+      display: flex;
+    }
+  }
+
+  .header-app {
+    width: 100%;
+    min-height: 5rem;
+    background-color: white;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+      0 8px 10px -6px rgb(0 0 0 / 0.1);
+    display: flex;
+    align-items: center;
+
+    .item {
+      width: $itemHeader;
+    }
+
+    .logo-page {
+      margin-left: 1rem;
+      font-size: 2rem;
+      font-weight: 600;
+      color: #8c00ff;
+    }
+    .app-info {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-right: 1rem;
+      color: rgba(0, 0, 0, 0.685);
+
+      .logout-btn {
+        margin-left: 1rem;
+
+        button {
+          background-color: rgb(255, 107, 107);
+          color: white;
+        }
+      }
+    }
+  }
+
+  .page-content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    .page-left {
+      transition: $transition;
+      margin-top: 3px;
+      padding-top: 2rem;
+      width: 27%;
+      height: calc(100vh);
+      background-color: white;
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+        0 8px 10px -6px rgb(0 0 0 / 0.1);
+      position: sticky;
+      left: 0px;
+      top: 0px;
+      display: flex;
+      flex-direction: column;
+
+      @media screen and(max-width: 920px) {
+        transition: $transition;
+        position: fixed;
+        width: 90%;
+        left: -100%;
+      }
+
+      .section-title {
+        width: 100%;
+        display: flex;
+        padding-left: 1rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: rgba(0, 0, 0, 0.719);
+      }
+
+      .content-section {
+        width: 100%;
+        .countries-list {
+          padding-left: 0.9rem;
+          padding-right: 0.9rem;
+          width: 98%;
+          height: 50vh;
+          overflow-y: auto;
+          align-items: center;
+          justify-content: center;
+          display: grid;
+          grid-template-columns: repeat(5, 20%);
+          grid-row-gap: 0px;
+        }
+
+        .find-word {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-content: center;
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+          flex-direction: column;
+          label {
+            color: rgb(68, 68, 68);
+            margin-left: 1rem;
+            margin-bottom: 0.5rem;
+          }
+
+          input {
+            margin-left: 1rem;
+            width: 90%;
+            padding-left: 5px;
+            padding-top: 0.7rem;
+            padding-bottom: 0.7rem;
+            border: solid 1px rgba(0, 0, 0, 0.075);
+            outline-color: rgba(0, 89, 255, 0.329);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+              0 8px 10px -6px rgb(0 0 0 / 0.1);
+            font-size: 1rem;
+          }
+        }
+
+        .countries-ctrl {
+          width: 100%;
+          padding-left: 1rem;
+          padding-right: 1rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .item-ctrl {
+            input {
+              border: none;
+              outline: none;
+              margin: 0.2rem;
+              padding-top: 5px;
+              padding-bottom: 5px;
+              width: 1.8rem;
+              text-align: center;
+              background-color: rgb(111, 34, 255);
+              color: white;
+            }
+          }
+        }
+      }
+    }
+
+    .view-page-left {
+      left: 0px;
+    }
+
+    .page-central {
+      width: calc((100% - 27%) - 2rem);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 1.5rem;
+      @media screen and(max-width: 920px) {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.card-country {
+  min-width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2px;
+  background-color: rgba(235, 235, 235, 0);
+  border-radius: 10%;
+  transform: scale(0.7);
+  &:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+  }
+
+  .flag {
+    width: 100%;
+  }
+  .card-title {
+    width: 100%;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+}
