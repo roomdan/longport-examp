@@ -5,4 +5,6 @@ export default {
   leages: "[GET] LEAGES_DATA",
   teams: "[GET] TEAMS_DATA {WHERE:ID}",
   seasons: "[SET] ITEMS_FOR_DETAILS",
+  statics: "[GET] STATISTICS_TEAM",
+  paramsStatistics: "[SET] PARAMS_STATISTICS",
 };

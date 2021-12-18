@@ -10,16 +10,12 @@ const TeamsSection = () => {
   const dispatch = useDispatch();
   const { getTeams_REDUCER } = useSelector((e) => e);
 
-  const [slices, setSlices] = useState({ a: 0, b: 10 });
   const [word, setWord] = useState("");
-
-  console.log(getTeams_REDUCER);
 
   const data = getTeams_REDUCER.response ? (
     getTeams_REDUCER.response
-      .slice(slices.a, slices.b)
-      .filter((e) => e.name.toLowerCase().includes(word.toLowerCase()))
-      .map((e) => <TeamCard key={e.logo} obj={e} />)
+      .filter((e) => e.team.name.toLowerCase().includes(word.toLowerCase()))
+      .map((e) => <TeamCard id={e.team.id} key={e.team.logo} obj={e.team} />)
   ) : (
     <div className="a-page-teams">
       <CharginSkeleton />

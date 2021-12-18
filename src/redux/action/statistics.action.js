@@ -1,13 +1,16 @@
 import axios from "axios";
 import types from "../type/types";
 
-export const getTeams_action = (param, paramB) => (payload) => {
-  let url = "https://v3.football.api-sports.io/teams".concat(
+export const getStatistics_action = (league, season, teamId) => (payload) => {
+  let url = "https://v3.football.api-sports.io/teams/statistics".concat(
     "?league=",
-    param ? param : "",
+    league ? league : "",
     "&",
     "season=",
-    paramB ? paramB : ""
+    season ? season : "",
+    "&",
+    "team=",
+    teamId ? teamId : ""
   );
   const key = "5bcd9467bcc713c610c34da3105133ac";
 
@@ -18,11 +21,11 @@ export const getTeams_action = (param, paramB) => (payload) => {
         "x-rapidapi-key": key,
       },
     });
-    payload(teams_action(data.data));
+    payload(statistics_action(data.data));
   };
   get();
 };
-const teams_action = (payload) => ({
-  type: types.teams,
+const statistics_action = (payload) => ({
+  type: types.statics,
   payload,
 });

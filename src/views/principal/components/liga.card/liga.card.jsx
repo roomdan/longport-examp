@@ -10,16 +10,16 @@ import { changeContent } from "../../../../redux/action/content.action";
 import "./liga.card.style.scss";
 import { setSeason_action } from "../../../../redux/action/seasons.action";
 
-export default function LeageCard({ obj }) {
+export default function LeageCard({ obj, seasons }) {
   const dispatch = useDispatch();
 
   const teamsGo = () => {
     dispatch(
       setSeason_action({
-        seasons: obj.seasons,
+        seasons: seasons,
         idLegae: obj.id,
         leageName: obj.name,
-        country: obj.country.name,
+        country: obj.type,
       })
     );
     dispatch(changeContent("seasons"));
@@ -35,7 +35,7 @@ export default function LeageCard({ obj }) {
           {obj.name}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {obj.country.name}
+          {obj.type}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>

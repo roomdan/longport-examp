@@ -22,7 +22,13 @@ const Leages = () => {
   const data = getLeages_REDUCER ? (
     getLeages_REDUCER.response
       .slice(slices.from, slices.to)
-      .map((leage) => <LeageCard key={leage.id} obj={leage} />)
+      .map((leage) => (
+        <LeageCard
+          key={String(leage.id * Math.random())}
+          obj={leage.league}
+          seasons={leage.seasons}
+        />
+      ))
   ) : (
     <div className="page-leages">
       <ChargingSkeleton />

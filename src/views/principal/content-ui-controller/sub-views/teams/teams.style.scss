@@ -1,5 +1,11 @@
 .a-page-teams {
   width: 100%;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
   .head-teams {
     width: 100%;
     padding-top: 0rem;
@@ -7,6 +13,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: sticky;
+    top: 0px;
+    background-color: white;
 
     button {
       outline: none;
@@ -20,7 +29,7 @@
 
   .bottom-bar {
     border-top-left-radius: 1rem;
-    width: 90%;
+    width: 80%;
     height: 4rem;
     background: linear-gradient(
       45deg,
@@ -53,5 +62,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    flex-direction: center;
+    justify-content: center;
   }
 }

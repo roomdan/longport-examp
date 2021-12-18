@@ -35,8 +35,6 @@ export class validateUser {
 
     const validateAuth = userAuth.filter((e) => e.username === username)[0];
 
-    console.log(validateAuth);
-
     if (validateAuth !== undefined) {
       return validateAuth.password === password &&
         validateAuth.username === username

@@ -1,0 +1,37 @@
+.a-page-statistics {
+  width: 100%;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .head-statistics {
+    width: 100%;
+    padding-top: 0rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0px;
+    background-color: white;
+    button {
+      outline: none;
+      border: none;
+      padding: 0.5rem;
+      background-color: rgb(150, 150, 150);
+      text-transform: capitalize;
+      color: white;
+    }
+  }
+
+  .content-statistics {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-direction: center;
+    justify-content: center;
+  }
+}

@@ -4,11 +4,33 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { changeContent } from "../../../../redux/action/content.action";
 import "./team.style.scss";
+import { getStatistics_action } from "../../../../redux/action/statistics.action";
+import { paramsStatistics_action } from "../../../../redux/action/params.statistics.action";
 
-export default function TeamCard({ obj }) {
+export default function TeamCard({ obj, id }) {
+  const dispatch = useDispatch();
+  const { paramsStatisitics_REDUCER } = useSelector((e) => e);
+
+  React.useEffect(() => {
+    dispatch(
+      paramsStatistics_action({ ...paramsStatisitics_REDUCER, team: id })
+    );
+  }, []);
+
+  const viewStatistics = () => {
+    dispatch(
+      getStatistics_action(
+        paramsStatisitics_REDUCER.legague,
+        paramsStatisitics_REDUCER.season,
+        paramsStatisitics_REDUCER.team
+      )
+    );
+    dispatch(changeContent("statistics"));
+  };
+
   return (
     <Card
       sx={{
@@ -26,11 +48,11 @@ export default function TeamCard({ obj }) {
           {obj.name}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {obj.country.name}
+          {obj.country}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <button className="view-statistics" onClick={() => {}}>
+        <button className="view-statistics" onClick={viewStatistics}>
           Estadisticas
         </button>
       </CardActions>

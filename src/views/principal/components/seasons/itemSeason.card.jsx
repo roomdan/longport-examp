@@ -1,14 +1,24 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { changeContent } from "../../../../redux/action/content.action";
+import { paramsStatistics_action } from "../../../../redux/action/params.statistics.action";
 import { getTeams_action } from "../../../../redux/action/teams.action";
 import "./itemSeason.style.scss";
 
 const ItemSeason = ({ leageId, name, obj }) => {
   const dispatch = useDispatch();
 
+  const { paramsStatisitics_REDUCER } = useSelector((e) => e);
+
   const teamsGo = () => {
-    dispatch(getTeams_action(leageId, obj.season));
+    dispatch(getTeams_action(leageId, obj.year));
     dispatch(changeContent("teams"));
+    dispatch(
+      paramsStatistics_action({
+        ...paramsStatisitics_REDUCER,
+        season: obj.year,
+        legague: leageId,
+      })
+    );
   };
 
   return (
@@ -28,7 +38,7 @@ const ItemSeason = ({ leageId, name, obj }) => {
         </span>
         <span className="inf-item">
           <p>Temporada:</p>
-          {obj.season}
+          {obj.year}
         </span>
         <button onClick={teamsGo} className="team-go">
           Ver Equipo

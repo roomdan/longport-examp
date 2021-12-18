@@ -3,6 +3,7 @@
 import { useSelector } from "react-redux";
 import Leages from "./sub-views/league/leage";
 import SeasonsList from "./sub-views/seasons/seasons";
+import Statistics from "./sub-views/statistics/statistics";
 import TeamsSection from "./sub-views/teams/teams";
 
 const Content_Controller = () => {
@@ -15,7 +16,7 @@ const Content_Controller = () => {
       case "seasons":
         return <SeasonsList />;
       case "statistics":
-        return <div>equipo</div>;
+        return <Statistics />;
       default:
         return <Leages />;
     }

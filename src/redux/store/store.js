@@ -9,6 +9,8 @@ import { getLeages_REDUCER } from "../reducer/leages.get.reducer";
 import { ControlleView_REDUCER } from "../reducer/contentController.reducer";
 import { getTeams_REDUCER } from "../reducer/teams.get.reducer";
 import { seasons_REDUCER } from "../reducer/seasons.reducer";
+import { getStatistics_REDUCER } from "../reducer/statistics.reducer";
+import { paramsStatisitics_REDUCER } from "../reducer/setStatistics.reducer";
 
 const composeEnhancers =
   (typeof window !== "undefined" &&
@@ -22,6 +24,8 @@ const reducers = combineReducers({
   getLeages_REDUCER,
   getTeams_REDUCER,
   seasons_REDUCER,
+  getStatistics_REDUCER,
+  paramsStatisitics_REDUCER,
 });
 
 export const store = createStore(

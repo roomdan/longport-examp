@@ -19,7 +19,7 @@ const PrincipalPage = () => {
   const [word, setWord] = useState("");
 
   const { Get_Countries_Reducer, registerUser_REDUCER } = useSelector((e) => e);
-  const [slices, setSlices] = useState({ a: 0, b: 10 });
+  const [slices, setSlices] = useState({ a: 0, b: 75 });
 
   const dispatch = useDispatch();
 
