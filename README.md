@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -73,3 +74,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 # football-api
 Aplicacion frontend con react
 >>>>>>> 2ac001d075f00b611630b77160a868743aed8d7f
+=======
+# longport-futball-api
+futball
+>>>>>>> 103bda651b2e67cbd1f94ec20733aacb396e7599
