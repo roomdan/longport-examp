@@ -44,6 +44,14 @@
   }
 }
 
+@media screen and(max-width:920px) {
+  @keyframes rotates {
+    to {
+      transform: rotate3d(0, 0, 0, 0deg);
+    }
+  }
+}
+
 .welcome {
   width: 100%;
   min-height: 100vh;

@@ -18,14 +18,11 @@ export class registerUser {
     if (localStorage.getItem("user_list")) {
       let users = localStorage.getItem("user_list");
       users = JSON.parse(users);
-      const algorithmValidate =
-        users.length > 0
-          ? users.map((u) => {
-              return u.username !== login.username && u.email !== login.email
-                ? true
-                : false;
-            })[0]
-          : true;
+      const algorithmValidate = users.map((u) => {
+        return u.username !== login.username && u.email !== login.email
+          ? true
+          : "";
+      })[0];
 
       if (validate) {
         if (algorithmValidate) {
