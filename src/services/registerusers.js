@@ -18,14 +18,16 @@ export class registerUser {
     if (localStorage.getItem("user_list")) {
       let users = localStorage.getItem("user_list");
       users = JSON.parse(users);
-      const algorithmValidate = users.map((u) => {
-        return u.username !== login.username && u.email !== login.email
-          ? true
-          : "";
-      })[0];
+      const algorithmValidate = users
+        .map((u) => {
+          return u.username !== login.username && u.email !== login.email
+            ? true
+            : false;
+        })
+        .includes(false);
 
       if (validate) {
-        if (algorithmValidate) {
+        if (!algorithmValidate) {
           if (verifyEmail) {
             const newUser = [...users, login];
             localStorage.setItem("user_list", JSON.stringify(newUser));
