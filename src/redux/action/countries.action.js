@@ -12,7 +12,6 @@ export const getData_action = () => (payload) => {
         "x-rapidapi-key": key,
       },
     });
-    console.log(get);
     payload(countries_action(get));
   };
 
