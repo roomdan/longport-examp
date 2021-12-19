@@ -42,6 +42,7 @@ const Leages = () => {
 
   return (
     <div>
+      <div className="tile-central-leages">Listado de Ligas</div>
       <div className="page-leages">{data}</div>
       <div className="view-results">
         <button onClick={ViewMoreResults}>Mas Resultados</button>

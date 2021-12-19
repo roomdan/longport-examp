@@ -18,6 +18,7 @@ export const getLeages_action = (param) => (payload) => {
         },
       }
     );
+    console.log(get);
     payload(leages_action(data.data));
   };
   get();

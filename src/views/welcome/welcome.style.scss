@@ -18,29 +18,19 @@
       -webkit-background-clip: text;
       text-align: center;
       letter-spacing: 2px;
-      animation: rotates 2s linear;
       &:hover {
         font-size: 4.5rem;
         transition: all 0.2s linear;
       }
 
       @media screen and(max-width:920px) {
+        color: rgb(255, 255, 255);
+        background: url("https://cdn.pixabay.com/photo/2011/12/14/12/21/orion-nebula-11107_960_720.jpg")
+          repeat;
         font-size: 5rem;
+        border-radius: 1rem;
       }
     }
-  }
-}
-
-@keyframes rotates {
-  0% {
-    transform: rotate3d(0, 0, 0, 0deg);
-  }
-
-  50% {
-    transform: rotate3d(5, 80, 90, -360deg);
-  }
-  100% {
-    transform: rotate3d(5, 80, 90, -360deg);
   }
 }
 
